@@ -6,6 +6,9 @@
 #include "GameFramework/Character.h"
 #include "BaseCharacter.generated.h"
 
+class USpringArmComponent;
+class UCameraComponent;
+
 UCLASS()
 class CPP_PROJECT_API ABaseCharacter : public ACharacter
 {
@@ -32,4 +35,12 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly)
 		USkeletalMeshComponent* OurCharacter = nullptr;
 
+	UPROPERTY()
+		USpringArmComponent* CameraArm = nullptr;
+
+	UPROPERTY()
+		UCameraComponent* OurCamera = nullptr;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Camera Settings")
+		float ArmLength { 300.f };
 };

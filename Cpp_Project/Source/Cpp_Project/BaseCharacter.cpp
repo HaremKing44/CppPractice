@@ -2,6 +2,8 @@
 
 
 #include "BaseCharacter.h"
+#include "GameFramework/SpringArmComponent.h"
+#include "Camera/CameraComponent.h"
 
 // Sets default values
 ABaseCharacter::ABaseCharacter()
@@ -11,8 +13,10 @@ ABaseCharacter::ABaseCharacter()
 
 	Root = CreateDefaultSubobject<USceneComponent>("Root");
 	OurCharacter = CreateDefaultSubobject<USkeletalMeshComponent>("OurCharacterMesh");
+	CameraArm = CreateDefaultSubobject<USpringArmComponent>("CameraArm");
+	OurCamera = CreateDefaultSubobject<UCameraComponent>("OurCamera");
 
-	//Find and load the mesh from disk to memory and it in CharacterMesh Varible.
+	//Find and load the mesh from disk to memory and save it in CharacterMesh Varible.
 	auto CharacterMesh = ConstructorHelpers::FObjectFinder<USkeletalMesh>(TEXT("SkeletalMesh'/Game/Mannequin/Character/Mesh/SK_Mannequin.SK_Mannequin'"));
 
 	//Assign that mesh to our Character.
@@ -24,9 +28,17 @@ ABaseCharacter::ABaseCharacter()
 	//To Set the Mesh properly into Capsule Collision Mesh.
 	OurCharacter->SetRelativeLocationAndRotation(FVector(0.f, 0.f, -90.f), FRotator(0.f, -90.f, 0.f));
 
+	//Setup for Basic Camera.
+	CameraArm->TargetArmLength = ArmLength;
+	CameraArm->SetRelativeLocationAndRotation(FVector(0.f, 0.f, 50.f), FRotator(-15.f, 0.f, 0.f));
+	CameraArm->bEnableCameraLag = true;
+	CameraArm->CameraLagSpeed = 4.0f;
+
 	//To form a Hierarchy.
 	Root = RootComponent;
 	OurCharacter->SetupAttachment(Root);
+	CameraArm->SetupAttachment(Root);
+	OurCamera->SetupAttachment(CameraArm, USpringArmComponent::SocketName);
 }
 
 // Called when the game starts or when spawned

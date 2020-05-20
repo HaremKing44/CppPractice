@@ -13,10 +13,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define CPP_PROJECT_BaseCharacter_generated_h
 
-#define Cpp_Project_Source_Cpp_Project_BaseCharacter_h_12_SPARSE_DATA
-#define Cpp_Project_Source_Cpp_Project_BaseCharacter_h_12_RPC_WRAPPERS
-#define Cpp_Project_Source_Cpp_Project_BaseCharacter_h_12_RPC_WRAPPERS_NO_PURE_DECLS
-#define Cpp_Project_Source_Cpp_Project_BaseCharacter_h_12_INCLASS_NO_PURE_DECLS \
+#define Cpp_Project_Source_Cpp_Project_BaseCharacter_h_15_SPARSE_DATA
+#define Cpp_Project_Source_Cpp_Project_BaseCharacter_h_15_RPC_WRAPPERS
+#define Cpp_Project_Source_Cpp_Project_BaseCharacter_h_15_RPC_WRAPPERS_NO_PURE_DECLS
+#define Cpp_Project_Source_Cpp_Project_BaseCharacter_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesABaseCharacter(); \
 	friend struct Z_Construct_UClass_ABaseCharacter_Statics; \
@@ -25,7 +25,7 @@ public: \
 	DECLARE_SERIALIZER(ABaseCharacter)
 
 
-#define Cpp_Project_Source_Cpp_Project_BaseCharacter_h_12_INCLASS \
+#define Cpp_Project_Source_Cpp_Project_BaseCharacter_h_15_INCLASS \
 private: \
 	static void StaticRegisterNativesABaseCharacter(); \
 	friend struct Z_Construct_UClass_ABaseCharacter_Statics; \
@@ -34,7 +34,7 @@ public: \
 	DECLARE_SERIALIZER(ABaseCharacter)
 
 
-#define Cpp_Project_Source_Cpp_Project_BaseCharacter_h_12_STANDARD_CONSTRUCTORS \
+#define Cpp_Project_Source_Cpp_Project_BaseCharacter_h_15_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ABaseCharacter(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ABaseCharacter) \
@@ -47,7 +47,7 @@ private: \
 public:
 
 
-#define Cpp_Project_Source_Cpp_Project_BaseCharacter_h_12_ENHANCED_CONSTRUCTORS \
+#define Cpp_Project_Source_Cpp_Project_BaseCharacter_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ABaseCharacter(ABaseCharacter&&); \
@@ -58,28 +58,28 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ABaseCharacter); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ABaseCharacter)
 
 
-#define Cpp_Project_Source_Cpp_Project_BaseCharacter_h_12_PRIVATE_PROPERTY_OFFSET
-#define Cpp_Project_Source_Cpp_Project_BaseCharacter_h_9_PROLOG
-#define Cpp_Project_Source_Cpp_Project_BaseCharacter_h_12_GENERATED_BODY_LEGACY \
+#define Cpp_Project_Source_Cpp_Project_BaseCharacter_h_15_PRIVATE_PROPERTY_OFFSET
+#define Cpp_Project_Source_Cpp_Project_BaseCharacter_h_12_PROLOG
+#define Cpp_Project_Source_Cpp_Project_BaseCharacter_h_15_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Cpp_Project_Source_Cpp_Project_BaseCharacter_h_12_PRIVATE_PROPERTY_OFFSET \
-	Cpp_Project_Source_Cpp_Project_BaseCharacter_h_12_SPARSE_DATA \
-	Cpp_Project_Source_Cpp_Project_BaseCharacter_h_12_RPC_WRAPPERS \
-	Cpp_Project_Source_Cpp_Project_BaseCharacter_h_12_INCLASS \
-	Cpp_Project_Source_Cpp_Project_BaseCharacter_h_12_STANDARD_CONSTRUCTORS \
+	Cpp_Project_Source_Cpp_Project_BaseCharacter_h_15_PRIVATE_PROPERTY_OFFSET \
+	Cpp_Project_Source_Cpp_Project_BaseCharacter_h_15_SPARSE_DATA \
+	Cpp_Project_Source_Cpp_Project_BaseCharacter_h_15_RPC_WRAPPERS \
+	Cpp_Project_Source_Cpp_Project_BaseCharacter_h_15_INCLASS \
+	Cpp_Project_Source_Cpp_Project_BaseCharacter_h_15_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define Cpp_Project_Source_Cpp_Project_BaseCharacter_h_12_GENERATED_BODY \
+#define Cpp_Project_Source_Cpp_Project_BaseCharacter_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Cpp_Project_Source_Cpp_Project_BaseCharacter_h_12_PRIVATE_PROPERTY_OFFSET \
-	Cpp_Project_Source_Cpp_Project_BaseCharacter_h_12_SPARSE_DATA \
-	Cpp_Project_Source_Cpp_Project_BaseCharacter_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
-	Cpp_Project_Source_Cpp_Project_BaseCharacter_h_12_INCLASS_NO_PURE_DECLS \
-	Cpp_Project_Source_Cpp_Project_BaseCharacter_h_12_ENHANCED_CONSTRUCTORS \
+	Cpp_Project_Source_Cpp_Project_BaseCharacter_h_15_PRIVATE_PROPERTY_OFFSET \
+	Cpp_Project_Source_Cpp_Project_BaseCharacter_h_15_SPARSE_DATA \
+	Cpp_Project_Source_Cpp_Project_BaseCharacter_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	Cpp_Project_Source_Cpp_Project_BaseCharacter_h_15_INCLASS_NO_PURE_DECLS \
+	Cpp_Project_Source_Cpp_Project_BaseCharacter_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

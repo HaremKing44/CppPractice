@@ -79,6 +79,11 @@ DerivedDataCache/*
 *.vcxproj
 *.user
 *.filters
+
+# Custom
 Cpp_Project/Saved/
 Cpp_Project/Intermediate/
 */Intermediate
+*/Binaries
+*/Build
+*/Saved
