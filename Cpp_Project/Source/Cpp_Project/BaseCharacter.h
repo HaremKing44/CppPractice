@@ -26,4 +26,10 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	UPROPERTY(EditDefaultsOnly)
+		USceneComponent* Root = nullptr;
+
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly)
+		USkeletalMeshComponent* OurCharacter = nullptr;
+
 };
