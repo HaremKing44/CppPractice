@@ -35,12 +35,29 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly)
 		USkeletalMeshComponent* OurCharacter = nullptr;
 
-	UPROPERTY()
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly)
 		USpringArmComponent* CameraArm = nullptr;
 
-	UPROPERTY()
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly)
 		UCameraComponent* OurCamera = nullptr;
 
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Camera Settings")
+public:
+	UPROPERTY()
 		float ArmLength { 300.f };
+
+	UPROPERTY()
+		float CameraLag{ 4.f };
+
+public:
+	UFUNCTION()
+		void MoveForward(float Value);
+
+	UFUNCTION()
+		void MoveRight(float Value);
+
+	UFUNCTION()
+		void CameraYaw(float Value);
+
+	UFUNCTION()
+		void CameraPitch(float Value);
 };

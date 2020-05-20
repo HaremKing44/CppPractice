@@ -14,8 +14,22 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define CPP_PROJECT_BaseCharacter_generated_h
 
 #define Cpp_Project_Source_Cpp_Project_BaseCharacter_h_15_SPARSE_DATA
-#define Cpp_Project_Source_Cpp_Project_BaseCharacter_h_15_RPC_WRAPPERS
-#define Cpp_Project_Source_Cpp_Project_BaseCharacter_h_15_RPC_WRAPPERS_NO_PURE_DECLS
+#define Cpp_Project_Source_Cpp_Project_BaseCharacter_h_15_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execCameraPitch); \
+	DECLARE_FUNCTION(execCameraYaw); \
+	DECLARE_FUNCTION(execMoveRight); \
+	DECLARE_FUNCTION(execMoveForward);
+
+
+#define Cpp_Project_Source_Cpp_Project_BaseCharacter_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execCameraPitch); \
+	DECLARE_FUNCTION(execCameraYaw); \
+	DECLARE_FUNCTION(execMoveRight); \
+	DECLARE_FUNCTION(execMoveForward);
+
+
 #define Cpp_Project_Source_Cpp_Project_BaseCharacter_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesABaseCharacter(); \

@@ -32,7 +32,8 @@ ABaseCharacter::ABaseCharacter()
 	CameraArm->TargetArmLength = ArmLength;
 	CameraArm->SetRelativeLocationAndRotation(FVector(0.f, 0.f, 50.f), FRotator(-15.f, 0.f, 0.f));
 	CameraArm->bEnableCameraLag = true;
-	CameraArm->CameraLagSpeed = 4.0f;
+	CameraArm->CameraLagSpeed = CameraLag;
+	CameraArm->bUsePawnControlRotation = true;
 
 	//To form a Hierarchy.
 	Root = RootComponent;
@@ -60,5 +61,40 @@ void ABaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+	PlayerInputComponent->BindAxis("Forward", this, &ABaseCharacter::MoveForward);
+	PlayerInputComponent->BindAxis("Right", this, &ABaseCharacter::MoveRight);
+	PlayerInputComponent->BindAxis("PlayerYaw", this, &ABaseCharacter::CameraYaw);
+	PlayerInputComponent->BindAxis("PlayerPitch", this, &ABaseCharacter::CameraPitch);
 }
 
+void ABaseCharacter::MoveForward(float Value)
+{
+	if ((Controller) && (Value != 0))
+	{
+		AddMovementInput(GetActorForwardVector(), Value);
+	}
+}
+
+void ABaseCharacter::MoveRight(float Value)
+{
+	if ((Controller) && (Value != 0))
+	{
+		AddMovementInput(GetActorRightVector(), Value);
+	}
+}
+
+void ABaseCharacter::CameraYaw(float Value)
+{
+	if ((Controller) && (Value != 0))
+	{
+		AddControllerYawInput(Value);
+	}
+}
+
+void ABaseCharacter::CameraPitch(float Value)
+{
+	if ((Controller) && (Value != 0))
+	{
+		AddControllerPitchInput(Value);
+	}
+}
