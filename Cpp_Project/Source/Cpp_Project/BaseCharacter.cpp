@@ -65,6 +65,9 @@ void ABaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 	PlayerInputComponent->BindAxis("Right", this, &ABaseCharacter::MoveRight);
 	PlayerInputComponent->BindAxis("PlayerYaw", this, &ABaseCharacter::CameraYaw);
 	PlayerInputComponent->BindAxis("PlayerPitch", this, &ABaseCharacter::CameraPitch);
+
+	PlayerInputComponent->BindAxis("GamepadCameraTurnRate", this, &ABaseCharacter::GPadCameraTurn);
+	PlayerInputComponent->BindAxis("GamepadCameraLookUpRate", this, &ABaseCharacter::GPadCameraLookUp);
 }
 
 void ABaseCharacter::MoveForward(float Value)
@@ -96,5 +99,25 @@ void ABaseCharacter::CameraPitch(float Value)
 	if ((Controller) && (Value != 0))
 	{
 		AddControllerPitchInput(Value);
+	}
+}
+
+void ABaseCharacter::GPadCameraTurn(float Value)
+{
+	if ((Controller) && (Value != 0))
+	{
+		float Delta = GetWorld()->GetDeltaSeconds();
+		float TurnValue = Value * BaseTurnRate * Delta;
+		AddControllerYawInput(TurnValue);
+	}
+}
+
+void ABaseCharacter::GPadCameraLookUp(float Value)
+{
+	if ((Controller) && (Value != 0))
+	{
+		float Delta = GetWorld()->GetDeltaSeconds();
+		float TurnValue = Value * BaseLookUpRate * Delta;
+		AddControllerPitchInput(TurnValue);
 	}
 }

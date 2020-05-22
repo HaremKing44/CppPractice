@@ -22,6 +22,22 @@ void EmptyLinkFunctionForGeneratedCodeBaseCharacter() {}
 	ENGINE_API UClass* Z_Construct_UClass_USkeletalMeshComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 // End Cross Module References
+	DEFINE_FUNCTION(ABaseCharacter::execGPadCameraLookUp)
+	{
+		P_GET_PROPERTY(FFloatProperty,Z_Param_Value);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->GPadCameraLookUp(Z_Param_Value);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(ABaseCharacter::execGPadCameraTurn)
+	{
+		P_GET_PROPERTY(FFloatProperty,Z_Param_Value);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->GPadCameraTurn(Z_Param_Value);
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(ABaseCharacter::execCameraPitch)
 	{
 		P_GET_PROPERTY(FFloatProperty,Z_Param_Value);
@@ -60,6 +76,8 @@ void EmptyLinkFunctionForGeneratedCodeBaseCharacter() {}
 		static const FNameNativePtrPair Funcs[] = {
 			{ "CameraPitch", &ABaseCharacter::execCameraPitch },
 			{ "CameraYaw", &ABaseCharacter::execCameraYaw },
+			{ "GPadCameraLookUp", &ABaseCharacter::execGPadCameraLookUp },
+			{ "GPadCameraTurn", &ABaseCharacter::execGPadCameraTurn },
 			{ "MoveForward", &ABaseCharacter::execMoveForward },
 			{ "MoveRight", &ABaseCharacter::execMoveRight },
 		};
@@ -126,6 +144,70 @@ void EmptyLinkFunctionForGeneratedCodeBaseCharacter() {}
 		if (!ReturnFunction)
 		{
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ABaseCharacter_CameraYaw_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ABaseCharacter_GPadCameraLookUp_Statics
+	{
+		struct BaseCharacter_eventGPadCameraLookUp_Parms
+		{
+			float Value;
+		};
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Value;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_ABaseCharacter_GPadCameraLookUp_Statics::NewProp_Value = { "Value", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(BaseCharacter_eventGPadCameraLookUp_Parms, Value), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABaseCharacter_GPadCameraLookUp_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABaseCharacter_GPadCameraLookUp_Statics::NewProp_Value,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABaseCharacter_GPadCameraLookUp_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "BaseCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ABaseCharacter_GPadCameraLookUp_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABaseCharacter, nullptr, "GPadCameraLookUp", nullptr, nullptr, sizeof(BaseCharacter_eventGPadCameraLookUp_Parms), Z_Construct_UFunction_ABaseCharacter_GPadCameraLookUp_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABaseCharacter_GPadCameraLookUp_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ABaseCharacter_GPadCameraLookUp_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ABaseCharacter_GPadCameraLookUp_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ABaseCharacter_GPadCameraLookUp()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ABaseCharacter_GPadCameraLookUp_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ABaseCharacter_GPadCameraTurn_Statics
+	{
+		struct BaseCharacter_eventGPadCameraTurn_Parms
+		{
+			float Value;
+		};
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Value;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_ABaseCharacter_GPadCameraTurn_Statics::NewProp_Value = { "Value", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(BaseCharacter_eventGPadCameraTurn_Parms, Value), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABaseCharacter_GPadCameraTurn_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABaseCharacter_GPadCameraTurn_Statics::NewProp_Value,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABaseCharacter_GPadCameraTurn_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "BaseCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ABaseCharacter_GPadCameraTurn_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABaseCharacter, nullptr, "GPadCameraTurn", nullptr, nullptr, sizeof(BaseCharacter_eventGPadCameraTurn_Parms), Z_Construct_UFunction_ABaseCharacter_GPadCameraTurn_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABaseCharacter_GPadCameraTurn_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ABaseCharacter_GPadCameraTurn_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ABaseCharacter_GPadCameraTurn_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ABaseCharacter_GPadCameraTurn()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ABaseCharacter_GPadCameraTurn_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -205,6 +287,14 @@ void EmptyLinkFunctionForGeneratedCodeBaseCharacter() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_BaseLookUpRate_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_BaseLookUpRate;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_BaseTurnRate_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_BaseTurnRate;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CameraLag_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_CameraLag;
@@ -239,6 +329,8 @@ void EmptyLinkFunctionForGeneratedCodeBaseCharacter() {}
 	const FClassFunctionLinkInfo Z_Construct_UClass_ABaseCharacter_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_ABaseCharacter_CameraPitch, "CameraPitch" }, // 78009442
 		{ &Z_Construct_UFunction_ABaseCharacter_CameraYaw, "CameraYaw" }, // 164719164
+		{ &Z_Construct_UFunction_ABaseCharacter_GPadCameraLookUp, "GPadCameraLookUp" }, // 3060944874
+		{ &Z_Construct_UFunction_ABaseCharacter_GPadCameraTurn, "GPadCameraTurn" }, // 4221457797
 		{ &Z_Construct_UFunction_ABaseCharacter_MoveForward, "MoveForward" }, // 314559252
 		{ &Z_Construct_UFunction_ABaseCharacter_MoveRight, "MoveRight" }, // 1893778370
 	};
@@ -249,6 +341,20 @@ void EmptyLinkFunctionForGeneratedCodeBaseCharacter() {}
 		{ "ModuleRelativePath", "BaseCharacter.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABaseCharacter_Statics::NewProp_BaseLookUpRate_MetaData[] = {
+		{ "Category", "CameraLookUpRate" },
+		{ "ModuleRelativePath", "BaseCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ABaseCharacter_Statics::NewProp_BaseLookUpRate = { "BaseLookUpRate", nullptr, (EPropertyFlags)0x0010000000010005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABaseCharacter, BaseLookUpRate), METADATA_PARAMS(Z_Construct_UClass_ABaseCharacter_Statics::NewProp_BaseLookUpRate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABaseCharacter_Statics::NewProp_BaseLookUpRate_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABaseCharacter_Statics::NewProp_BaseTurnRate_MetaData[] = {
+		{ "Category", "CameraTurnRate" },
+		{ "ModuleRelativePath", "BaseCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ABaseCharacter_Statics::NewProp_BaseTurnRate = { "BaseTurnRate", nullptr, (EPropertyFlags)0x0010000000010005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABaseCharacter, BaseTurnRate), METADATA_PARAMS(Z_Construct_UClass_ABaseCharacter_Statics::NewProp_BaseTurnRate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABaseCharacter_Statics::NewProp_BaseTurnRate_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABaseCharacter_Statics::NewProp_CameraLag_MetaData[] = {
 		{ "ModuleRelativePath", "BaseCharacter.h" },
@@ -294,6 +400,8 @@ void EmptyLinkFunctionForGeneratedCodeBaseCharacter() {}
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABaseCharacter_Statics::NewProp_Root = { "Root", nullptr, (EPropertyFlags)0x0010000000090009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABaseCharacter, Root), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABaseCharacter_Statics::NewProp_Root_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABaseCharacter_Statics::NewProp_Root_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABaseCharacter_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseCharacter_Statics::NewProp_BaseLookUpRate,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseCharacter_Statics::NewProp_BaseTurnRate,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseCharacter_Statics::NewProp_CameraLag,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseCharacter_Statics::NewProp_ArmLength,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseCharacter_Statics::NewProp_OurCamera,
@@ -328,7 +436,7 @@ void EmptyLinkFunctionForGeneratedCodeBaseCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABaseCharacter, 1334535668);
+	IMPLEMENT_CLASS(ABaseCharacter, 2006714258);
 	template<> CPP_PROJECT_API UClass* StaticClass<ABaseCharacter>()
 	{
 		return ABaseCharacter::StaticClass();

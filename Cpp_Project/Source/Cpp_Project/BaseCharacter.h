@@ -43,10 +43,16 @@ public:
 
 public:
 	UPROPERTY()
-		float ArmLength { 300.f };
+		float ArmLength = 300.f;
 
 	UPROPERTY()
-		float CameraLag{ 4.f };
+		float CameraLag = 4.f;
+
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category = "CameraTurnRate")
+		float BaseTurnRate = 45.f;
+
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category = "CameraLookUpRate")
+		float BaseLookUpRate= 45.f;
 
 public:
 	UFUNCTION()
@@ -60,4 +66,10 @@ public:
 
 	UFUNCTION()
 		void CameraPitch(float Value);
+
+	UFUNCTION()
+		void GPadCameraTurn(float Value);
+
+	UFUNCTION()
+		void GPadCameraLookUp(float Value);
 };
