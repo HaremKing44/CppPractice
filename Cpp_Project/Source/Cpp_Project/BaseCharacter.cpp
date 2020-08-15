@@ -68,10 +68,14 @@ void ABaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 	PlayerInputComponent->BindAxis("GamepadCameraTurnRate", this, &ABaseCharacter::GPadCameraTurn);
 	PlayerInputComponent->BindAxis("GamepadCameraLookUpRate", this, &ABaseCharacter::GPadCameraLookUp);
+
+	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ABaseCharacter::JumpStart);
+	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ABaseCharacter::JumpStop);
 }
 
 void ABaseCharacter::MoveForward(float Value)
 {
+	
 	if ((Controller) && (Value != 0))
 	{
 		AddMovementInput(GetActorForwardVector(), Value);
@@ -120,4 +124,14 @@ void ABaseCharacter::GPadCameraLookUp(float Value)
 		float TurnValue = Value * BaseLookUpRate * Delta;
 		AddControllerPitchInput(TurnValue);
 	}
+}
+
+void ABaseCharacter::JumpStart()
+{
+	ACharacter::Jump();
+}
+
+void ABaseCharacter::JumpStop()
+{
+	ACharacter::StopJumping();
 }

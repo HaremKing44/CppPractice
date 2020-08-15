@@ -16,6 +16,8 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define Cpp_Project_Source_Cpp_Project_BaseCharacter_h_15_SPARSE_DATA
 #define Cpp_Project_Source_Cpp_Project_BaseCharacter_h_15_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execJumpStop); \
+	DECLARE_FUNCTION(execJumpStart); \
 	DECLARE_FUNCTION(execGPadCameraLookUp); \
 	DECLARE_FUNCTION(execGPadCameraTurn); \
 	DECLARE_FUNCTION(execCameraPitch); \
@@ -26,6 +28,8 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define Cpp_Project_Source_Cpp_Project_BaseCharacter_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execJumpStop); \
+	DECLARE_FUNCTION(execJumpStart); \
 	DECLARE_FUNCTION(execGPadCameraLookUp); \
 	DECLARE_FUNCTION(execGPadCameraTurn); \
 	DECLARE_FUNCTION(execCameraPitch); \

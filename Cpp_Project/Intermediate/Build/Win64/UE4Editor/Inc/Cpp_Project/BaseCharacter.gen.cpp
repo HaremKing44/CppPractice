@@ -22,6 +22,20 @@ void EmptyLinkFunctionForGeneratedCodeBaseCharacter() {}
 	ENGINE_API UClass* Z_Construct_UClass_USkeletalMeshComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 // End Cross Module References
+	DEFINE_FUNCTION(ABaseCharacter::execJumpStop)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->JumpStop();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(ABaseCharacter::execJumpStart)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->JumpStart();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(ABaseCharacter::execGPadCameraLookUp)
 	{
 		P_GET_PROPERTY(FFloatProperty,Z_Param_Value);
@@ -78,6 +92,8 @@ void EmptyLinkFunctionForGeneratedCodeBaseCharacter() {}
 			{ "CameraYaw", &ABaseCharacter::execCameraYaw },
 			{ "GPadCameraLookUp", &ABaseCharacter::execGPadCameraLookUp },
 			{ "GPadCameraTurn", &ABaseCharacter::execGPadCameraTurn },
+			{ "JumpStart", &ABaseCharacter::execJumpStart },
+			{ "JumpStop", &ABaseCharacter::execJumpStop },
 			{ "MoveForward", &ABaseCharacter::execMoveForward },
 			{ "MoveRight", &ABaseCharacter::execMoveRight },
 		};
@@ -211,6 +227,50 @@ void EmptyLinkFunctionForGeneratedCodeBaseCharacter() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_ABaseCharacter_JumpStart_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABaseCharacter_JumpStart_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "BaseCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ABaseCharacter_JumpStart_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABaseCharacter, nullptr, "JumpStart", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ABaseCharacter_JumpStart_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ABaseCharacter_JumpStart_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ABaseCharacter_JumpStart()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ABaseCharacter_JumpStart_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ABaseCharacter_JumpStop_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABaseCharacter_JumpStop_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "BaseCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ABaseCharacter_JumpStop_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABaseCharacter, nullptr, "JumpStop", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ABaseCharacter_JumpStop_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ABaseCharacter_JumpStop_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ABaseCharacter_JumpStop()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ABaseCharacter_JumpStop_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	struct Z_Construct_UFunction_ABaseCharacter_MoveForward_Statics
 	{
 		struct BaseCharacter_eventMoveForward_Parms
@@ -331,6 +391,8 @@ void EmptyLinkFunctionForGeneratedCodeBaseCharacter() {}
 		{ &Z_Construct_UFunction_ABaseCharacter_CameraYaw, "CameraYaw" }, // 164719164
 		{ &Z_Construct_UFunction_ABaseCharacter_GPadCameraLookUp, "GPadCameraLookUp" }, // 3060944874
 		{ &Z_Construct_UFunction_ABaseCharacter_GPadCameraTurn, "GPadCameraTurn" }, // 4221457797
+		{ &Z_Construct_UFunction_ABaseCharacter_JumpStart, "JumpStart" }, // 3507008101
+		{ &Z_Construct_UFunction_ABaseCharacter_JumpStop, "JumpStop" }, // 3087002923
 		{ &Z_Construct_UFunction_ABaseCharacter_MoveForward, "MoveForward" }, // 314559252
 		{ &Z_Construct_UFunction_ABaseCharacter_MoveRight, "MoveRight" }, // 1893778370
 	};
@@ -436,7 +498,7 @@ void EmptyLinkFunctionForGeneratedCodeBaseCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABaseCharacter, 2006714258);
+	IMPLEMENT_CLASS(ABaseCharacter, 3121386220);
 	template<> CPP_PROJECT_API UClass* StaticClass<ABaseCharacter>()
 	{
 		return ABaseCharacter::StaticClass();

@@ -72,4 +72,10 @@ public:
 
 	UFUNCTION()
 		void GPadCameraLookUp(float Value);
+
+	UFUNCTION()
+		void JumpStart();
+
+	UFUNCTION()
+		void JumpStop();
 };
